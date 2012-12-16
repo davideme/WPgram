@@ -95,6 +95,9 @@
     </Compile>
     <Compile Include="Design\DesignDataService.cs" />
     <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -118,6 +121,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="LoginPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -181,7 +187,7 @@
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Downloads\csharp-sqlite_3_7_7_1_71\Community.CsharpSqlite.WinPhone\Community.CsharpSqlite.WinPhone.csproj">
+    <ProjectReference Include="..\Community.CsharpSqlite.WinPhone\Community.CsharpSqlite.WinPhone.csproj">
       <Project>{A1CF8CB2-DB66-4036-AB1F-9D205D5C93E9}</Project>
       <Name>Community.CsharpSqlite.WinPhone</Name>
     </ProjectReference>
