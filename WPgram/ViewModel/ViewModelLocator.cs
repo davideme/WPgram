@@ -11,8 +11,11 @@
 
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
+using Instagram_lock_screen.ViewModel;
+using IWPgram.Model.Service;
 using Microsoft.Practices.ServiceLocation;
 using WPgram.Model;
+using WPgram.Model.Service;
 
 namespace WPgram.ViewModel
 {
@@ -31,14 +34,18 @@ namespace WPgram.ViewModel
 
             if (ViewModelBase.IsInDesignModeStatic)
             {
-                SimpleIoc.Default.Register<IDataService, Design.DesignDataService>();
             }
             else
             {
-                SimpleIoc.Default.Register<IDataService, DataService>();
             }
 
+            //Service
+            SimpleIoc.Default.Register<INavigationService, NavigationService>();
+            SimpleIoc.Default.Register<InstagramService>();
+
+            //ViewModel
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<LoginViewModel>();
         }
 
         /// <summary>
@@ -52,6 +59,20 @@ namespace WPgram.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
+            }
+        }
+
+        /// <summary>
+        /// Gets the Main property.
+        /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
+            "CA1822:MarkMembersAsStatic",
+            Justification = "This non-static member is needed for data binding purposes.")]
+        public LoginViewModel Login
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<LoginViewModel>();
             }
         }
 

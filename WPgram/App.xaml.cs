@@ -11,6 +11,8 @@ using WPgram.Resources;
 using WPgram.ViewModel;
 using SQLite;
 using WPgram.Model;
+using System.IO;
+using WPgram.Model.Service;
 
 namespace WPgram
 {
@@ -65,11 +67,11 @@ namespace WPgram
         // This code will not execute when the application is reactivated
         private async void Application_Launching(object sender, LaunchingEventArgs e)
         {
-            string dbPath = Windows.Storage.ApplicationData.Current.LocalFolder.Path + "\\WPgram.sqlite";
+            //string dbPath = Windows.Storage.ApplicationData.Current.LocalFolder.Path + "\\WPgram.sqlite";
 
-            var dbAsync = new SQLiteAsyncConnection(dbPath);
-            await dbAsync.CreateTableAsync<Entry>();
-            dbAsync.DropTableAsync<Entry>();
+            //var dbAsync = new SQLiteAsyncConnection(dbPath);
+            //await dbAsync.CreateTableAsync<Entry>();
+            //await dbAsync.DropTableAsync<Entry>();
         }
 
         // Code to execute when the application is activated (brought to foreground)

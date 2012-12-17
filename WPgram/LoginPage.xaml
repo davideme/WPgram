@@ -13,15 +13,14 @@
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
                             shell:SystemTray.IsVisible="True"
-                            DataContext="{Binding Main, Source={StaticResource Locator}}">
+                            DataContext="{Binding Login, Source={StaticResource Locator}}">
 
     <shell:SystemTray.ProgressIndicator>
         <shell:ProgressIndicator  x:Name="LoadingIndicator" IsIndeterminate="True" IsVisible="False" Text="{Binding LocalizedResources.Loading, Source={StaticResource LocalizedStrings}}" />
     </shell:SystemTray.ProgressIndicator>
 
     <Grid>
-        <phone:WebBrowser Navigating="WebBrowser_Navigating_1" LoadCompleted="WebBrowser_LoadCompleted_1"
-            Source="https://instagram.com/oauth/authorize/?client_id=7de62820950242b891b9cb27181573b5&amp;redirect_uri=http://hic-sunt-leones.appspot.com/instagram-login.html&amp;response_type=token"  />
+        <phone:WebBrowser Navigating="WebBrowser_Navigating_1" LoadCompleted="WebBrowser_LoadCompleted_1" IsScriptEnabled="True"  ScriptNotify="WebBrowser_ScriptNotify_1" Source="{Binding CurrentUri}"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

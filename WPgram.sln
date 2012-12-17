@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPgram", "WPgram\WPgram.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Community.CsharpSqlite.WinPhone", "Community.CsharpSqlite.WinPhone\Community.CsharpSqlite.WinPhone.csproj", "{A1CF8CB2-DB66-4036-AB1F-9D205D5C93E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPgram.Model", "WPgram.Model\WPgram.Model.csproj", "{BB495D77-7A86-4FAB-9967-42BDF9B3D070}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,26 @@ Global
 		{A1CF8CB2-DB66-4036-AB1F-9D205D5C93E9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{A1CF8CB2-DB66-4036-AB1F-9D205D5C93E9}.Release|Win32.ActiveCfg = Release|Any CPU
 		{A1CF8CB2-DB66-4036-AB1F-9D205D5C93E9}.Release|x86.ActiveCfg = Release|Any CPU
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Debug|ARM.ActiveCfg = Debug|ARM
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Debug|ARM.Build.0 = Debug|ARM
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Debug|Win32.ActiveCfg = Debug|x86
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Debug|Win32.Build.0 = Debug|x86
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Debug|x86.ActiveCfg = Debug|x86
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Debug|x86.Build.0 = Debug|x86
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Release|ARM.ActiveCfg = Release|ARM
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Release|ARM.Build.0 = Release|ARM
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Release|Mixed Platforms.Build.0 = Release|x86
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Release|Win32.ActiveCfg = Release|x86
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Release|Win32.Build.0 = Release|x86
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Release|x86.ActiveCfg = Release|x86
+		{BB495D77-7A86-4FAB-9967-42BDF9B3D070}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

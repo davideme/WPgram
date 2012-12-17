@@ -8,37 +8,18 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using WPgram.Resources;
-using Instagram_lock_screen.ViewModel;
 
 namespace WPgram
 {
-    public partial class LoginPage : PhoneApplicationPage
+    public partial class FeedPage : PhoneApplicationPage
     {
         // Constructor
-        public LoginPage()
+        public FeedPage()
         {
             InitializeComponent();
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
-        }
-
-        private void WebBrowser_Navigating_1(object sender, NavigatingEventArgs e)
-        {
-            SystemTray.ProgressIndicator.IsVisible = true;
-        }
-
-        private void WebBrowser_LoadCompleted_1(object sender, NavigationEventArgs e)
-        {
-            if (SystemTray.ProgressIndicator != null)
-            {
-                SystemTray.ProgressIndicator.IsVisible = false;
-            }
-        }
-
-        private void WebBrowser_ScriptNotify_1(object sender, NotifyEventArgs e)
-        {
-            (this.DataContext as LoginViewModel).ScriptNotifyCommand.Execute(e.Value);
         }
 
         // Sample code for building a localized ApplicationBar

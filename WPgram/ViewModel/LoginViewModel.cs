@@ -1,7 +1,8 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using IWPgram.Model.Service;
 using System;
-using System.Windows;
+using WPgram.Model.Service;
 
 namespace Instagram_lock_screen.ViewModel
 {
@@ -18,7 +19,7 @@ namespace Instagram_lock_screen.ViewModel
         /// </summary>
         public const string CurrentUriPropertyName = "CurrentUri";
 
-        private Uri currentUri = new Uri("https://instagram.com/oauth/authorize/?client_id=7de62820950242b891b9cb27181573b5&redirect_uri=http://hic-sunt-leones.appspot.com/instagram-login.html&response_type=token");
+        private Uri currentUri = null;
 
         /// <summary>
         /// Sets and gets the CurrentUri property.
@@ -44,34 +45,35 @@ namespace Instagram_lock_screen.ViewModel
             }
         }
 
-        //private RelayCommand<string> scriptNotifyCommand;
-        //private INavigationService NavigationService;
+        private RelayCommand<string> scriptNotifyCommand;
+        private INavigationService NavigationService;
 
-        ///// <summary>
-        ///// Gets the ScriptNotifyCommand.
-        ///// </summary>
-        //public RelayCommand<string> ScriptNotifyCommand
-        //{
-        //    get
-        //    {
-        //        return scriptNotifyCommand
-        //            ?? (scriptNotifyCommand = new RelayCommand<string>(
-        //                                  accessToken =>
-        //                                  {
-        //                                      SettingsService.AddOrUpdateValue("accessToken", accessToken);
-        //                                      SettingsService.Save();
-        //                                      (Application.Current as App).JustLoggedIn = true;
-        //                                      this.NavigationService.NavigateTo(new Uri("/SettingsPage.xaml", UriKind.Relative));
-        //                                  }));
-        //    }
-        //}
+        /// <summary>
+        /// Gets the ScriptNotifyCommand.
+        /// </summary>
+        public RelayCommand<string> ScriptNotifyCommand
+        {
+            get
+            {
+                return scriptNotifyCommand
+                    ?? (scriptNotifyCommand = new RelayCommand<string>(
+                                          accessToken =>
+                                          {
+                                              SettingsService.AddOrUpdateValue("accessToken", accessToken);
+                                              SettingsService.Save();
+                                              this.NavigationService.NavigateTo(new Uri("/FeedPage.xaml", UriKind.Relative));
+                                          }));
+            }
+        }
 
-        ///// <summary>
-        ///// Initializes a new instance of the InstagramLoginViewModel class.
-        ///// </summary>
-        //public InstagramLoginViewModel(INavigationService navigationService)
-        //{
-        //    this.NavigationService = navigationService;
-        //}
+        /// <summary>
+        /// Initializes a new instance of the InstagramLoginViewModel class.
+        /// </summary>
+        public LoginViewModel(INavigationService navigationService, InstagramService instagramService)
+        {
+            this.NavigationService = navigationService;
+            var clientId = instagramService.getClientId().Result;
+            this.currentUri = new Uri("https://instagram.com/oauth/authorize/?client_id=" + clientId + "&redirect_uri=http://hic-sunt-leones.appspot.com/instagram-login.html&response_type=token");
+        }
     }
 }
