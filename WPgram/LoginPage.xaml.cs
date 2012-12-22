@@ -23,6 +23,14 @@ namespace WPgram
             //BuildLocalizedApplicationBar();
         }
 
+        protected override async void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            SystemTray.ProgressIndicator.IsVisible = true;
+            await (this.DataContext as LoginViewModel).Initialize();
+            SystemTray.ProgressIndicator.IsVisible = false;
+        }
+
         private void WebBrowser_Navigating_1(object sender, NavigatingEventArgs e)
         {
             SystemTray.ProgressIndicator.IsVisible = true;

@@ -1,7 +1,8 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using IWPgram.Model.Service;
+using WPgram.Model.Service;
 using System;
+using System.Threading.Tasks;
 using WPgram.Model.Service;
 
 namespace Instagram_lock_screen.ViewModel
@@ -47,6 +48,7 @@ namespace Instagram_lock_screen.ViewModel
 
         private RelayCommand<string> scriptNotifyCommand;
         private INavigationService NavigationService;
+        private InstagramService InstagramService;
 
         /// <summary>
         /// Gets the ScriptNotifyCommand.
@@ -72,7 +74,12 @@ namespace Instagram_lock_screen.ViewModel
         public LoginViewModel(INavigationService navigationService, InstagramService instagramService)
         {
             this.NavigationService = navigationService;
-            var clientId = instagramService.getClientId().Result;
+            this.InstagramService = instagramService;
+        }
+
+        public async Task Initialize()
+        {
+            var clientId = await InstagramService.getClientId();
             this.currentUri = new Uri("https://instagram.com/oauth/authorize/?client_id=" + clientId + "&redirect_uri=http://hic-sunt-leones.appspot.com/instagram-login.html&response_type=token");
         }
     }

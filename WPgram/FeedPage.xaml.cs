@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
+﻿using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using WPgram.Resources;
+using WPgram.ViewModel;
 
 namespace WPgram
 {
@@ -20,6 +13,14 @@ namespace WPgram
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
+        }
+
+        protected override async void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            SystemTray.ProgressIndicator.IsVisible = true;
+            await (this.DataContext as FeedViewModel).Initialize();
+            SystemTray.ProgressIndicator.IsVisible = false;
         }
 
         // Sample code for building a localized ApplicationBar

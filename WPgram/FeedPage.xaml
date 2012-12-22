@@ -8,16 +8,74 @@
                             xmlns:ignore="http://www.ignore.com"
                             mc:Ignorable="d ignore"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
-                            FontSize="{StaticResource PhoneFontSizeNormal}"
                             Foreground="{StaticResource PhoneForegroundBrush}"
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
                             shell:SystemTray.IsVisible="True"
-                            DataContext="{Binding Main, Source={StaticResource Locator}}">
+                            DataContext="{Binding Feed, Source={StaticResource Locator}}">
+
+    <shell:SystemTray.ProgressIndicator>
+        <shell:ProgressIndicator  x:Name="LoadingIndicator" IsIndeterminate="True" IsVisible="False" Text="{Binding LocalizedResources.Loading, Source={StaticResource LocalizedStrings}}" />
+    </shell:SystemTray.ProgressIndicator>
+
+    <phone:PhoneApplicationPage.Resources>
+        <DataTemplate x:Key="DataTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <!--user-->
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <!--picture-->
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <!--likes-->
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <!--comments-->
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <!--actions-->
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                
+            	<Grid Margin="0,12">
+            		<Grid.ColumnDefinitions>
+            			<!--avatar-->
+            			<ColumnDefinition Width="Auto"/>
+            			<!--name-->
+            			<ColumnDefinition Width="*"/>
+            			<!--timestamp-->
+            			<ColumnDefinition Width="Auto"/>
+            		</Grid.ColumnDefinitions>
+            		<Image Grid.Column="0" Source="{Binding user.profile_picture}" Width="48" Height="48"/>
+            		<TextBlock Grid.Column="1" Text="{Binding user.username}" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="{StaticResource PhoneFontSizeSmall}" Foreground="#FF3F739A" Margin="12,0,0,0"/>
+            		<StackPanel Grid.Column="2" Orientation="Horizontal">
+            			<Image Source="/Assets/clock.png"/>
+            			<TextBlock Text="{Binding createdTimeSpan, Mode=OneWay}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="{StaticResource PhoneFontSizeSmall}" Foreground="#FF999999" Margin="6,0,0,0"/>
+            		</StackPanel>
+            	</Grid>
+            	<Image Grid.Row="1" Source="{Binding images.standard_resolution.url}" Width="456" Height="456" />
+				<Grid Grid.Row="2">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="32"></ColumnDefinition>
+						<ColumnDefinition Width="Auto"></ColumnDefinition>
+					</Grid.ColumnDefinitions>
+					<Image Grid.Column="0" Source="heart.png" Width="18.75" />
+					<!-- List of Likers -->
+				</Grid>
+				<Grid Grid.Row="3">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="32"></ColumnDefinition>
+						<ColumnDefinition Width="Auto"></ColumnDefinition>
+					</Grid.ColumnDefinitions>
+					<Image Grid.Column="0" Source="speech balloon.png" Width="20" />
+					<!-- List of Comments -->
+				</Grid>
+            </Grid>
+        </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
+	<phone:PhoneApplicationPage.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeSmall"/>
+	</phone:PhoneApplicationPage.FontSize>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot"
-          Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="#FFFFFFFF">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -43,29 +101,24 @@
          -->
 
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel"
-                    Grid.Row="0"
-                    Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION"
-                       Style="{StaticResource PhoneTextNormalStyle}"
-                       Margin="12,0" />
-            <TextBlock Text="page name"
-                       Margin="9,-7,0,0"
-                       Style="{StaticResource PhoneTextTitle1Style}" />
-        </StackPanel>
+        <Border Background="#FF49769B">            
+            <StackPanel x:Name="TitlePanel"
+                        Grid.Row="0"
+                        Margin="12,17,0,28">
+                <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
+                           Style="{StaticResource PhoneTextNormalStyle}"
+                           Margin="12,0" Foreground="White" />
+                <TextBlock Text="{Binding Path=LocalizedResources.Feed, Source={StaticResource LocalizedStrings}}"
+                           Margin="9,-7,0,0"
+                           Style="{StaticResource PhoneTextTitle1Style}" Foreground="White" />
+            </StackPanel>
+        </Border>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel"
               Grid.Row="1"
-              Margin="12,0,12,0">
-
-            <TextBlock Text="{Binding WelcomeTitle}"
-                       Style="{StaticResource PhoneTextNormalStyle}"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       TextAlignment="Center"
-                       TextWrapping="Wrap"
-                       FontSize="40" />
+              Margin="12,0,0,0">
+            <phone:LongListSelector ItemTemplate="{StaticResource DataTemplate}" ItemsSource="{Binding Feed}"/>
 
         </Grid>
 
@@ -76,6 +129,12 @@
 
             Before shipping remove this XAML and the image itself.-->
         <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+        
     </Grid>
-
+    
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" Opacity="1" BackgroundColor="#FF6A6A6A" ForegroundColor="#FFC1C1C1">
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/refresh.png" Text="refresh"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>

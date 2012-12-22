@@ -1,7 +1,10 @@
-﻿using System;
+﻿using IWPgram.Model.Entity;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -39,5 +42,38 @@ namespace WPgram.Model.Service
             return clientId;
         }
 
+
+        public Task<FeedClass> GetFeed()
+        {
+            return InstagramCall<FeedClass>("https://api.instagram.com/v1/users/self/feed?access_token=");
+        }
+
+        private async Task<TResult> InstagramCall<TResult>(string baseUri)
+        {
+            var accessToken = SettingsService.GetValueOrDefault("accessToken", "");
+            if (accessToken == "")
+            {
+                throw new EmptyAccessTokenException();
+            }
+            using (var stream = await OpenStream<TResult>(new Uri(baseUri + accessToken)))
+            {
+                var serializer = new DataContractJsonSerializer(typeof(FeedClass));
+                return (TResult)serializer.ReadObject(stream);
+            }
+        }
+
+        private async Task<Stream> OpenStream<TResult>(Uri uri)
+        {
+            var webClient = new WebClient();
+            try
+            {
+                return await webClient.OpenReadTaskAsync(uri);
+            }
+            catch (WebException e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.ToString());
+                return null;
+            }
+        }
     }
 }

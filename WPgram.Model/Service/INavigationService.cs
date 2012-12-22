@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Navigation;
 
-namespace IWPgram.Model.Service
+namespace WPgram.Model.Service
 {
     public interface INavigationService
     {

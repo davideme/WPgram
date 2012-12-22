@@ -25,6 +25,7 @@
     <ValidateXaml>true</ValidateXaml>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <ExpressionBlendVersion>5.0.31017.0</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -110,8 +111,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SampleData\SampleFeed2\SampleFeed2.xaml.cs">
+      <DependentUpon>SampleFeed2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\SampleFeed\SampleFeed.xaml.cs">
+      <DependentUpon>SampleFeed.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="ViewModel\FeedViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
@@ -131,6 +139,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <DesignTimeOnly Include="SampleData\SampleFeed2\SampleFeed2.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </DesignTimeOnly>
+    <Page Include="SampleData\SampleFeed\SampleFeed.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -141,9 +157,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\AppBar\refresh.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\clock.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -160,7 +178,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="clientId.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -168,24 +186,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="GalaSoft.MvvmLight.WP8">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Laurent Bugnion (GalaSoft)\Mvvm Light Toolkit\Binaries\WP71\GalaSoft.MvvmLight.WP71.dll</HintPath>
-    </Reference>
-    <Reference Include="GalaSoft.MvvmLight.Extras.WP8">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Laurent Bugnion (GalaSoft)\Mvvm Light Toolkit\Binaries\WP71\GalaSoft.MvvmLight.Extras.WP71.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.ServiceLocation">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Laurent Bugnion (GalaSoft)\Mvvm Light Toolkit\Binaries\WP71\Microsoft.Practices.ServiceLocation.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Interactivity">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Laurent Bugnion (GalaSoft)\Mvvm Light Toolkit\Binaries\WP71\System.Windows.Interactivity.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Community.CsharpSqlite.WinPhone\Community.CsharpSqlite.WinPhone.csproj">
@@ -199,6 +199,33 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Design\" />
+  </ItemGroup>
+  <ItemGroup>
+    <DesignTimeOnly Include="SampleData\SampleFeed\SampleFeed.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight.Extras.WP8">
+      <HintPath>..\..\..\..\..\Downloads\MVVMLight_V4_1_25_WP8\GalaSoft.MvvmLight.Extras.WP8.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.WP8">
+      <HintPath>..\..\..\..\..\Downloads\MVVMLight_V4_1_25_WP8\GalaSoft.MvvmLight.WP8.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <DesignTimeOnly Include="SampleData\SampleFeed2\SampleFeed2.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <DesignTimeOnly Include="SampleData\SampleFeed2\SampleFeed2_Files\image01.png" />
+    <DesignTimeOnly Include="SampleData\SampleFeed2\SampleFeed2_Files\image02.png" />
+    <DesignTimeOnly Include="SampleData\SampleFeed2\SampleFeed2_Files\image03.png" />
+    <DesignTimeOnly Include="SampleData\SampleFeed2\SampleFeed2_Files\image04.png" />
+    <DesignTimeOnly Include="SampleData\SampleFeed2\SampleFeed2_Files\image05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="heart.png" />
+    <Resource Include="speech balloon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

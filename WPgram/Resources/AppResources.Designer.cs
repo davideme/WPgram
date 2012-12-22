@@ -88,11 +88,29 @@ namespace WPgram.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to feed.
+        /// </summary>
+        public static string Feed {
+            get {
+                return ResourceManager.GetString("Feed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loading....
         /// </summary>
         public static string Loading {
             get {
                 return ResourceManager.GetString("Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to refresh.
+        /// </summary>
+        public static string Refresh {
+            get {
+                return ResourceManager.GetString("Refresh", resourceCulture);
             }
         }
         

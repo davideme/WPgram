@@ -1,4 +1,4 @@
-﻿using IWPgram.Model.Service;
+﻿using WPgram.Model.Service;
 using Microsoft.Phone.Controls;
 using System;
 using System.Windows;

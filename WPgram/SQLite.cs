@@ -1924,7 +1924,7 @@ namespace SQLite
 
 		public TableMapping Table { get; private set; }
 
-		Expression _where;
+        System.Linq.Expressions.Expression _where;
 		List<Ordering> _orderBys;
 		int? _limit;
 		int? _offset;
@@ -2034,12 +2034,12 @@ namespace SQLite
 			}
 		}
 
-		private void AddWhere (Expression pred)
+        private void AddWhere(System.Linq.Expressions.Expression pred)
 		{
 			if (_where == null) {
 				_where = pred;
 			} else {
-				_where = Expression.AndAlso (_where, pred);
+                _where = System.Linq.Expressions.Expression.AndAlso(_where, pred);
 			}
 		}
 				
@@ -2086,7 +2086,7 @@ namespace SQLite
 			public object Value { get; set; }
 		}
 
-		private CompileResult CompileExpr (Expression expr, List<object> queryArgs)
+        private CompileResult CompileExpr(System.Linq.Expressions.Expression expr, List<object> queryArgs)
 		{
 			if (expr == null) {
 				throw new NotSupportedException ("Expression is NULL");
@@ -2198,7 +2198,7 @@ namespace SQLite
 					} else if (mem.Member is FieldInfo) {
 #endif
 #if SILVERLIGHT
-						val = Expression.Lambda (expr).Compile ().DynamicInvoke ();
+                        val = System.Linq.Expressions.Expression.Lambda(expr).Compile().DynamicInvoke();
 #else
 						var m = (FieldInfo)mem.Member;
 						val = m.GetValue (obj);
@@ -2256,7 +2256,7 @@ namespace SQLite
 				throw new NotSupportedException("Cannot compile Null-BinaryExpression with type " + expression.NodeType.ToString());
 		}
 
-		string GetSqlName (Expression expr)
+        string GetSqlName(System.Linq.Expressions.Expression expr)
 		{
 			var n = expr.NodeType;
 			if (n == ExpressionType.GreaterThan)
