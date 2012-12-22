@@ -67,6 +67,14 @@ namespace WPgram
         // This code will not execute when the application is reactivated
         private async void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            if (SettingsService.GetValueOrDefault("accessToken", "") != "")
+            {
+                RootFrame.Navigate(new Uri("/FeedPage.xaml", UriKind.Relative));
+            }
+            else
+            {
+                RootFrame.Navigate(new Uri("/LoginPage.xaml", UriKind.Relative));
+            }
             //string dbPath = Windows.Storage.ApplicationData.Current.LocalFolder.Path + "\\WPgram.sqlite";
 
             //var dbAsync = new SQLiteAsyncConnection(dbPath);
