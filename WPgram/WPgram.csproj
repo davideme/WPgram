@@ -111,12 +111,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SampleData\SampleFeed2\SampleFeed2.xaml.cs">
-      <DependentUpon>SampleFeed2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SampleData\SampleFeed\SampleFeed.xaml.cs">
-      <DependentUpon>SampleFeed.xaml</DependentUpon>
-    </Compile>
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="ViewModel\FeedViewModel.cs" />
@@ -139,14 +133,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <DesignTimeOnly Include="SampleData\SampleFeed2\SampleFeed2.xaml">
-      <Generator>MSBuild:MarkupCompilePass1</Generator>
-      <SubType>Designer</SubType>
-    </DesignTimeOnly>
-    <Page Include="SampleData\SampleFeed\SampleFeed.xaml">
-      <Generator>MSBuild:MarkupCompilePass1</Generator>
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -154,6 +140,7 @@
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="SampleData\SampleFeed.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
@@ -201,9 +188,6 @@
     <Folder Include="Design\" />
   </ItemGroup>
   <ItemGroup>
-    <DesignTimeOnly Include="SampleData\SampleFeed\SampleFeed.xsd" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight.Extras.WP8">
       <HintPath>..\..\..\..\..\Downloads\MVVMLight_V4_1_25_WP8\GalaSoft.MvvmLight.Extras.WP8.dll</HintPath>
     </Reference>
@@ -212,16 +196,6 @@
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Interactivity, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-  </ItemGroup>
-  <ItemGroup>
-    <DesignTimeOnly Include="SampleData\SampleFeed2\SampleFeed2.xsd" />
-  </ItemGroup>
-  <ItemGroup>
-    <DesignTimeOnly Include="SampleData\SampleFeed2\SampleFeed2_Files\image01.png" />
-    <DesignTimeOnly Include="SampleData\SampleFeed2\SampleFeed2_Files\image02.png" />
-    <DesignTimeOnly Include="SampleData\SampleFeed2\SampleFeed2_Files\image03.png" />
-    <DesignTimeOnly Include="SampleData\SampleFeed2\SampleFeed2_Files\image04.png" />
-    <DesignTimeOnly Include="SampleData\SampleFeed2\SampleFeed2_Files\image05.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="heart.png" />

@@ -12,7 +12,6 @@
 
     <!--Application Resources-->
     <Application.Resources>
-    	<SampleData1:SampleFeed2 x:Key="SampleFeed2" d:IsDataSource="True"/>
         <local:LocalizedStrings x:Key="LocalizedStrings" />
 
         <vm:ViewModelLocator x:Key="Locator"
