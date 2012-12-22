@@ -1,6 +1,12 @@
 #instagram api client id
 clientId.txt
 
+#Sample Data
+Sample*.json
+
+#Thumbs.db files
+Thumbs.db
+
 # Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
 [Bb]in/
 [Oo]bj/
