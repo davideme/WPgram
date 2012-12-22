@@ -46,7 +46,7 @@
             		<Image Grid.Column="0" Source="{Binding user.profile_picture}" Width="48" Height="48"/>
             		<TextBlock Grid.Column="1" Text="{Binding user.username}" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="{StaticResource PhoneFontSizeSmall}" Foreground="#FF3F739A" Margin="12,0,0,0"/>
             		<StackPanel Grid.Column="2" Orientation="Horizontal">
-            			<Image Source="/Assets/clock.png"/>
+            			<Image Source="/Assets/clock.png" Width="12"/>
             			<TextBlock Text="{Binding createdTimeSpan, Mode=OneWay}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="{StaticResource PhoneFontSizeSmall}" Foreground="#FF999999" Margin="6,0,0,0"/>
             		</StackPanel>
             	</Grid>
