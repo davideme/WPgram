@@ -1,0 +1,154 @@
+﻿<ViewModel:FeedViewModel xmlns:ViewModel="clr-namespace:WPgram.ViewModel" xmlns:Entity="clr-namespace:WPgram.Model.Entity;assembly=WPgram.Model" xmlns:System="clr-namespace:System;assembly=mscorlib" IsInDesignMode="True" IsInDesignModeStatic="False">
+	<ViewModel:FeedViewModel.Feed>
+		<Entity:FeedDataClass created_time="8:20:14 AM">
+			<Entity:FeedDataClass.createdTimeSpan>
+				<System:TimeSpan/>
+			</Entity:FeedDataClass.createdTimeSpan>
+			<Entity:FeedDataClass.images>
+				<Entity:ImagesClass>
+					<Entity:ImagesClass.standard_resolution>
+						<Entity:Low_resolutionClass url="http://distilleryimage5.s3.amazonaws.com/ded5e2104bba11e2b7ab22000a1f90e7_7.jpg"/>
+					</Entity:ImagesClass.standard_resolution>
+				</Entity:ImagesClass>
+			</Entity:FeedDataClass.images>
+			<Entity:FeedDataClass.user>
+				<Entity:UserDataClass profile_picture="http://images.instagram.com/profiles/profile_24770417_75sq_1350342979.jpg" username="Aaberg, Jesper"/>
+			</Entity:FeedDataClass.user>
+		</Entity:FeedDataClass>
+		<Entity:FeedDataClass created_time="7:06:05 AM">
+			<Entity:FeedDataClass.createdTimeSpan>
+				<System:TimeSpan/>
+			</Entity:FeedDataClass.createdTimeSpan>
+			<Entity:FeedDataClass.images>
+				<Entity:ImagesClass>
+					<Entity:ImagesClass.standard_resolution>
+						<Entity:Low_resolutionClass url="http://distilleryimage5.s3.amazonaws.com/ded5e2104bba11e2b7ab22000a1f90e7_7.jpg"/>
+					</Entity:ImagesClass.standard_resolution>
+				</Entity:ImagesClass>
+			</Entity:FeedDataClass.images>
+			<Entity:FeedDataClass.user>
+				<Entity:UserDataClass profile_picture="http://www.adventure-works.com/" username="Adams, Ellen"/>
+			</Entity:FeedDataClass.user>
+		</Entity:FeedDataClass>
+		<Entity:FeedDataClass created_time="4:26:00 PM">
+			<Entity:FeedDataClass.createdTimeSpan>
+				<System:TimeSpan/>
+			</Entity:FeedDataClass.createdTimeSpan>
+			<Entity:FeedDataClass.images>
+				<Entity:ImagesClass>
+					<Entity:ImagesClass.standard_resolution>
+						<Entity:Low_resolutionClass url="http://www.adventure-works.com/"/>
+					</Entity:ImagesClass.standard_resolution>
+				</Entity:ImagesClass>
+			</Entity:FeedDataClass.images>
+			<Entity:FeedDataClass.user>
+				<Entity:UserDataClass profile_picture="http://www.adventure-works.com/" username="Adams, Terry"/>
+			</Entity:FeedDataClass.user>
+		</Entity:FeedDataClass>
+		<Entity:FeedDataClass created_time="7:13:04 AM">
+			<Entity:FeedDataClass.createdTimeSpan>
+				<System:TimeSpan/>
+			</Entity:FeedDataClass.createdTimeSpan>
+			<Entity:FeedDataClass.images>
+				<Entity:ImagesClass>
+					<Entity:ImagesClass.standard_resolution>
+						<Entity:Low_resolutionClass url="http://www.alpineskihouse.com/"/>
+					</Entity:ImagesClass.standard_resolution>
+				</Entity:ImagesClass>
+			</Entity:FeedDataClass.images>
+			<Entity:FeedDataClass.user>
+				<Entity:UserDataClass profile_picture="http://www.alpineskihouse.com/" username="Adams, Terry"/>
+			</Entity:FeedDataClass.user>
+		</Entity:FeedDataClass>
+		<Entity:FeedDataClass created_time="9:31:24 PM">
+			<Entity:FeedDataClass.createdTimeSpan>
+				<System:TimeSpan/>
+			</Entity:FeedDataClass.createdTimeSpan>
+			<Entity:FeedDataClass.images>
+				<Entity:ImagesClass>
+					<Entity:ImagesClass.standard_resolution>
+						<Entity:Low_resolutionClass url="http://www.baldwinmuseumofscience.com/"/>
+					</Entity:ImagesClass.standard_resolution>
+				</Entity:ImagesClass>
+			</Entity:FeedDataClass.images>
+			<Entity:FeedDataClass.user>
+				<Entity:UserDataClass profile_picture="http://www.baldwinmuseumofscience.com/" username="Penor, Lori"/>
+			</Entity:FeedDataClass.user>
+		</Entity:FeedDataClass>
+		<Entity:FeedDataClass created_time="5:44:29 PM">
+			<Entity:FeedDataClass.createdTimeSpan>
+				<System:TimeSpan/>
+			</Entity:FeedDataClass.createdTimeSpan>
+			<Entity:FeedDataClass.images>
+				<Entity:ImagesClass>
+					<Entity:ImagesClass.standard_resolution>
+						<Entity:Low_resolutionClass url="http://www.blueyonderairlines.com/"/>
+					</Entity:ImagesClass.standard_resolution>
+				</Entity:ImagesClass>
+			</Entity:FeedDataClass.images>
+			<Entity:FeedDataClass.user>
+				<Entity:UserDataClass profile_picture="http://www.blueyonderairlines.com/" username="Pfeiffer, Michael"/>
+			</Entity:FeedDataClass.user>
+		</Entity:FeedDataClass>
+		<Entity:FeedDataClass created_time="11:38:50 PM">
+			<Entity:FeedDataClass.createdTimeSpan>
+				<System:TimeSpan/>
+			</Entity:FeedDataClass.createdTimeSpan>
+			<Entity:FeedDataClass.images>
+				<Entity:ImagesClass>
+					<Entity:ImagesClass.standard_resolution>
+						<Entity:Low_resolutionClass url="http://www.cpandl.com/"/>
+					</Entity:ImagesClass.standard_resolution>
+				</Entity:ImagesClass>
+			</Entity:FeedDataClass.images>
+			<Entity:FeedDataClass.user>
+				<Entity:UserDataClass profile_picture="http://www.cpandl.com/" username="Philips, Carol"/>
+			</Entity:FeedDataClass.user>
+		</Entity:FeedDataClass>
+		<Entity:FeedDataClass created_time="8:33:47 AM">
+			<Entity:FeedDataClass.createdTimeSpan>
+				<System:TimeSpan/>
+			</Entity:FeedDataClass.createdTimeSpan>
+			<Entity:FeedDataClass.images>
+				<Entity:ImagesClass>
+					<Entity:ImagesClass.standard_resolution>
+						<Entity:Low_resolutionClass url="http://www.cohovineyard.com/"/>
+					</Entity:ImagesClass.standard_resolution>
+				</Entity:ImagesClass>
+			</Entity:FeedDataClass.images>
+			<Entity:FeedDataClass.user>
+				<Entity:UserDataClass profile_picture="http://www.cohovineyard.com/" username="Poe, Toni"/>
+			</Entity:FeedDataClass.user>
+		</Entity:FeedDataClass>
+		<Entity:FeedDataClass created_time="7:13:20 AM">
+			<Entity:FeedDataClass.createdTimeSpan>
+				<System:TimeSpan/>
+			</Entity:FeedDataClass.createdTimeSpan>
+			<Entity:FeedDataClass.images>
+				<Entity:ImagesClass>
+					<Entity:ImagesClass.standard_resolution>
+						<Entity:Low_resolutionClass url="http://www.cohowinery.com/"/>
+					</Entity:ImagesClass.standard_resolution>
+				</Entity:ImagesClass>
+			</Entity:FeedDataClass.images>
+			<Entity:FeedDataClass.user>
+				<Entity:UserDataClass profile_picture="http://www.cohowinery.com/" username="Hicks, Cassie"/>
+			</Entity:FeedDataClass.user>
+		</Entity:FeedDataClass>
+		<Entity:FeedDataClass created_time="11:05:39 PM">
+			<Entity:FeedDataClass.createdTimeSpan>
+				<System:TimeSpan/>
+			</Entity:FeedDataClass.createdTimeSpan>
+			<Entity:FeedDataClass.images>
+				<Entity:ImagesClass>
+					<Entity:ImagesClass.standard_resolution>
+						<Entity:Low_resolutionClass url="http://www.contoso.com/"/>
+					</Entity:ImagesClass.standard_resolution>
+				</Entity:ImagesClass>
+			</Entity:FeedDataClass.images>
+			<Entity:FeedDataClass.user>
+				<Entity:UserDataClass profile_picture="http://www.contoso.com/" username="Argentiero, Luca"/>
+			</Entity:FeedDataClass.user>
+		</Entity:FeedDataClass>
+	</ViewModel:FeedViewModel.Feed>
+</ViewModel:FeedViewModel>

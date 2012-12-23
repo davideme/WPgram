@@ -1,5 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
-using IWPgram.Model.Entity;
+using WPgram.Model.Entity;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using WPgram.Model.Service;

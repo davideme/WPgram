@@ -1,4 +1,4 @@
-﻿using IWPgram.Model.Entity;
+﻿using WPgram.Model.Entity;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -43,9 +43,9 @@ namespace WPgram.Model.Service
         }
 
 
-        public Task<FeedClass> GetFeed()
+        public async Task<FeedClass> GetFeed()
         {
-            return InstagramCall<FeedClass>("https://api.instagram.com/v1/users/self/feed?access_token=");
+            return await InstagramCall<FeedClass>("https://api.instagram.com/v1/users/self/feed?access_token=");
         }
 
         private async Task<TResult> InstagramCall<TResult>(string baseUri)
